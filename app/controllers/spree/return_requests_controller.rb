@@ -32,7 +32,7 @@ class Spree::ReturnRequestsController < Spree::StoreController
         render :thank_you
         return
       end
-      redirect_to spree.edit_return_request_url(@return_request), flash: { success: "Return request updated." } and return
+      redirect_to spree.edit_return_request_url(@return_request), flash: { success: Spree.t(:return_request_success) } and return
     else
       flash.now[:error] = @return_request.errors.full_messages.to_sentence
       render :edit and return
@@ -58,6 +58,6 @@ class Spree::ReturnRequestsController < Spree::StoreController
     end
 
     def prevent_updating_submitted_requests
-      redirect_to spree.new_return_request_url, flash: { error: "You can't edit submitted return requests." } and return if @return_request.submitted_at
+      redirect_to spree.new_return_request_url, flash: { error: Spree.t(:return_request_failed) } and return if @return_request.submitted_at
     end
 end

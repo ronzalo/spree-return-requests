@@ -5,7 +5,7 @@ Deface::Override.new(
   text: '
   <li class="tab-with-icon <%= params[:controller] == "spree/admin/return_requests" ? "selected" : "" %>">
     <%= link_to admin_return_requests_path, class: "icon_link with-tip icon-ambulance return_requests" do %>
-      <span class="text">Return Requests</span>
+      <span class="text"><%= Spree.t(:return_requests_title)%></span>
     <% end %>
   </li>',
 )

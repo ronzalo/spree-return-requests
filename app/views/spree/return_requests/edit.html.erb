@@ -5,10 +5,10 @@
       <legend align="center"><%= Spree.t(:edit_return_request) %></legend>
 
       <dl>
-        <dt>Order Number</dt>
+        <dt><%= I18n.t(:number, :scope => 'activerecord.attributes.spree/order') %></dt>
         <dd><%= @return_request.order.number %></dd>
 
-        <dt>Email Address</dt>
+        <dt><%= I18n.t(:email, :scope => 'activerecord.attributes.spree/order') %></dt>
         <dd><%= @return_request.email_address %></dd>
       </dl>
 

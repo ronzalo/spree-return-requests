@@ -92,7 +92,7 @@ class Spree::ReturnRequest < ActiveRecord::Base
       if order_number && ! order
         self.order = Spree::Order.where(number: order_number).first
         unless self.order
-          errors.add(:base, "Can't find order with that number.")
+          errors.add(:base, Spree.t(:order_not_found))
           return false
         end
       end
@@ -100,14 +100,14 @@ class Spree::ReturnRequest < ActiveRecord::Base
 
     def verify_order_is_present
       unless self.order
-        errors.add(:base, "Order not found.")
+        errors.add(:base, Spree.t(:order_not_found))
         return false
       end
     end
 
     def verify_order_and_email_match
       unless order && order.email == self.email_address
-        errors.add(:base, "Email doesn't match")
+        errors.add(:base, Spree.t(:email_not_match))
         return false
       end
     end
@@ -115,7 +115,7 @@ class Spree::ReturnRequest < ActiveRecord::Base
     def order_cant_be_too_old_to_return
       max_days = SpreeReturnRequests::Config[:return_request_max_order_age_in_days]
       if self.order.completed_at < max_days.days.ago
-        errors.add(:base, "The order must have been placed within the last #{max_days} in order to be returned.")
+        errors.add(:base, Spree.t(:order_too_old, max_days: max_days))
         return false
       end
     end
