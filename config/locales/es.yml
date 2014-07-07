@@ -1,0 +1,31 @@
+es:
+  spree:
+    return_requests: Solicitudes de Devolución
+    new_return_request: Nueva Solicitud de Devolución
+    edit_return_request: Editar Solicitud de Devolución
+    update_return_request: Actualizar Devolución
+    approve_return_request: Aprobar Solicitud de Devolución
+    deny_return_request: Rechazar Solicitud de Devolución
+    order_number: Número de Orden
+    email_address: Email
+    ready_to_submit: Listo para devolver?
+    return_requests_title: Devoluciones
+    return_request_success: La solicitud fue actualizada correctamente.
+    return_request_failed: No puede editar una devolución que ya fue enviada.
+    not_returning_more_than_ordered: No se puede retornar mas de lo comprado.
+    order_not_found: "No existe orden con ese número"
+    email_not_match: "Email de la orden no coincide con email ingresado"
+    order_too_old: La orden debe haber sido hecha dentro de los ultimos %{max_days} dias para poder ser devuelta
+    return_requests_thank_you: "Gracias por enviar la solicitud"
+    return_request_message: Tu solicitud sera revisada y procesada prontamente.
+    return_request_type:
+      pending: Pendiente
+      approved: Aprobado
+      denied: Rechazado
+  activerecord:
+    attributes:
+      spree/return_request_line_item:
+        qty: Cantidad
+      spree/return_request:
+        email_address: Email
+        order_id: Orden
