@@ -1,1 +1,1 @@
-//= require spree/spree_backend
+//= require admin/spree_backend
