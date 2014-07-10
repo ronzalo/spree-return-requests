@@ -4,11 +4,15 @@ es:
     new_return_request: Nueva Solicitud de Devolución
     edit_return_request: Editar Solicitud de Devolución
     update_return_request: Actualizar Devolución
-    approve_return_request: Aprobar Solicitud de Devolución
-    deny_return_request: Rechazar Solicitud de Devolución
+    approve_return_request: Aprobar Solicitud
+    deny_return_request: Rechazar Solicitud
     order_number: Número de Orden
     email_address: Email
-    ready_to_submit: Listo para devolver?
+    mailer:
+      submitted_admin: Un cliente pidio una devolución
+      approved: Tu solicitud de devolución fue aprobada
+      submitted: Gracias por enviarnos tu solicitud
+    ready_to_submit: ¿Listo para devolver?
     return_requests_title: Devoluciones
     return_request_success: La solicitud fue actualizada correctamente.
     return_request_failed: No puede editar una devolución que ya fue enviada.
@@ -19,13 +23,19 @@ es:
     return_requests_thank_you: "Gracias por enviar la solicitud"
     return_request_message: Tu solicitud sera revisada y procesada prontamente.
     return_request_type:
-      pending: Pendiente
-      approved: Aprobado
-      denied: Rechazado
+      pending: Pendientes
+      approved: Aprobados
+      denied: Rechazados
+    title:
+      already_returned: Ya devueltos
+      purchased: Comprado
+      returning: Devolviendo
   activerecord:
     attributes:
       spree/return_request_line_item:
         qty: Cantidad
       spree/return_request:
+        id: Id
+        submitted_at: Solicitado
         email_address: Email
         order_id: Orden
