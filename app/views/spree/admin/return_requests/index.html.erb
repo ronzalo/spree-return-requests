@@ -3,7 +3,7 @@
     <ul id="sub_nav" class="inline-menu">
       <% @types.each do |type| %>
         <li <%= type == params[:type] ? 'class="selected"' : "" %>>
-          <%= link_to type, admin_return_requests_path(type: type) %>
+          <%= link_to Spree.t(type, :scope => :return_request_type), admin_return_requests_path(type: type) %>
         </li>
       <% end %>
     </ul>
@@ -18,9 +18,9 @@
   <table>
     <thead>
       <tr>
-        <th>Request ID</th>
-        <th>Order</th>
-        <th>Submitted</th>
+        <th><%= I18n.t(:id, :scope => 'activerecord.attributes.spree/return_request') %></th>
+        <th><%= I18n.t(:order_id, :scope => 'activerecord.attributes.spree/return_request') %></th>
+        <th><%= I18n.t(:submitted_at, :scope => 'activerecord.attributes.spree/return_request') %></th>
         <th></th>
       </tr>
     </thead>
