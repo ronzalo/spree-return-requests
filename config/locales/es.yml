@@ -18,6 +18,7 @@ es:
     return_request_failed: No puede editar una devolución que ya fue enviada.
     not_returning_more_than_ordered: No se puede retornar mas de lo comprado.
     order_not_found: "No existe orden con ese número"
+    order_is_not_complete: "La orden no está completa"
     email_not_match: "Email de la orden no coincide con email ingresado"
     order_too_old: La orden debe haber sido hecha dentro de los ultimos %{max_days} dias para poder ser devuelta
     return_requests_thank_you: "Gracias por enviar la solicitud"

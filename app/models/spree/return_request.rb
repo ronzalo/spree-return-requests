@@ -16,6 +16,7 @@ class Spree::ReturnRequest < ActiveRecord::Base
   before_save :find_order_by_number_if_necessary
   before_save :verify_order_is_present
   before_save :verify_order_and_email_match
+  before_save :verify_order_is_completed
   before_save :order_cant_be_too_old_to_return
   before_save :mark_as_submitted_if_ready_to_submit
 
@@ -101,6 +102,13 @@ class Spree::ReturnRequest < ActiveRecord::Base
     def verify_order_is_present
       unless self.order
         errors.add(:base, Spree.t(:order_not_found))
+        return false
+      end
+    end
+
+    def verify_order_is_completed
+      unless self.order.complete?
+        errors.add(:base, Spree.t(:order_is_not_complete))
         return false
       end
     end

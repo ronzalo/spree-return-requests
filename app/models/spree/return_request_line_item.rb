@@ -55,6 +55,6 @@ class Spree::ReturnRequestLineItem < ActiveRecord::Base
   private
 
     def not_returning_more_than_ordered
-      errors.add(:qty, Spree.t(:not_returning_more_than_ordered)) if qty > returnable_qty
+      errors.add(:base, Spree.t(:not_returning_more_than_ordered)) if qty > returnable_qty
     end
 end

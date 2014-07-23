@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_return_requests'
-  s.version     = '2.1.3'
+  s.version     = '2.1.4'
   s.summary     = 'Allows customers to request returns'
   s.required_ruby_version = '>= 1.9.3'
 
